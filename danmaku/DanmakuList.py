@@ -4,6 +4,7 @@ from danmaku.Danmaku import Danmaku
 
 UNDEFINED = -666
 
+
 class DanmakuList:
     chat_server = ''
     cid = 0

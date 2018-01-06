@@ -10,13 +10,16 @@
 # Third-party API
 # https://bili.b612.in/api/?type=usermid&hash=<sender_hash>
 
-DEBUG = True
-UNDEFINED = -666
-
 from json import JSONDecodeError
 from danmaku.DanmakuList import DanmakuList
 from danmaku.Danmaku import Danmaku
 import requests
+
+from danmaku.Video import Video
+
+DEBUG = True
+UNDEFINED = -666
+
 
 # HEADERS = {'Host': 'comment.bilibili.com',
 #            'Connection': 'keep-alive',
@@ -28,8 +31,6 @@ import requests
 #            'DNT': '1',
 #            'Accept-Encoding': 'gzip, deflate',
 #            'Accept-Language': 'zh-CN,zh;'}
-
-DEBUG = True
 
 def _p(s):
     if DEBUG:
@@ -96,7 +97,8 @@ def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
         i += 1
     return d_list
 
-def get_uid(sender_hash:str):
+
+def get_uid(sender_hash: str):
     # Third-party API
     # received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json()
     received = requests.get('https://bili.b612.in/api/?type=usermid&hash=%s' % sender_hash).content.decode()
@@ -108,6 +110,11 @@ def get_uid(sender_hash:str):
 def timestamp_to_datetime(stamp: int):
     import datetime
     return datetime.datetime.fromtimestamp(stamp).strftime('%Y-%m-%d %H:%M:%S')
+
+
+def get_video_by_aid(aid: int):
+    received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
+    return Video.create_instance(*received.values())
 
 
 if __name__ == '__main__':
@@ -132,4 +139,6 @@ if __name__ == '__main__':
     # with open('dmk2.txt', 'w', encoding='utf-8') as f:
     #     f.write(s)
 
-    print(get_uid('f9ff56e4'))
+    # print(get_uid('f9ff56e4'))
+
+    print(get_video_by_aid(17957424).reply)
