@@ -7,10 +7,13 @@
 # http://comment.bilibili.com/dmroll,1414944000,2543804
 # 1414944000就是2014-11-03 00:00，2543804是视频cid
 
+# Third-party API
+# https://bili.b612.in/api/?type=usermid&hash=<sender_hash>
+
 DEBUG = True
+UNDEFINED = -666
 
 from json import JSONDecodeError
-
 from danmaku.DanmakuList import DanmakuList
 from danmaku.Danmaku import Danmaku
 import requests
@@ -27,7 +30,6 @@ import requests
 #            'Accept-Language': 'zh-CN,zh;'}
 
 DEBUG = True
-
 
 def _p(s):
     if DEBUG:
@@ -94,9 +96,19 @@ def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
         i += 1
     return d_list
 
-def timestamp_to_datetime(stamp:int):
+def get_uid(sender_hash:str):
+    # Third-party API
+    # received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json()
+    received = requests.get('https://bili.b612.in/api/?type=usermid&hash=%s' % sender_hash).content.decode()
+    if received == '':
+        return UNDEFINED
+    return int(received)
+
+
+def timestamp_to_datetime(stamp: int):
     import datetime
     return datetime.datetime.fromtimestamp(stamp).strftime('%Y-%m-%d %H:%M:%S')
+
 
 if __name__ == '__main__':
     # l = parse_danmaku_list_from_bili(66478)
@@ -113,9 +125,11 @@ if __name__ == '__main__':
     # pool = get_history_danmaku_list_by_timestamp(2543804, list(get_history_danmaku_pools(2543804).keys())[0])
     # print(*pool.danmakus)
 
-    l = get_all_history_danmaku_lists(get_cids(1999286)[0])
-    s = ''
-    for d in l.danmakus:
-        s += str(d) + '\n'
-    with open('dmk2.txt', 'w', encoding='utf-8') as f:
-        f.write(s)
+    # l = get_all_history_danmaku_lists(get_cids(1999286)[0])
+    # s = ''
+    # for d in l.danmakus:
+    #     s += str(d) + '\n'
+    # with open('dmk2.txt', 'w', encoding='utf-8') as f:
+    #     f.write(s)
+
+    print(get_uid('f9ff56e4'))

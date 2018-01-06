@@ -2,6 +2,7 @@ import xml.etree.ElementTree as Et
 
 from danmaku.Danmaku import Danmaku
 
+UNDEFINED = -666
 
 class DanmakuList:
     chat_server = ''
@@ -45,6 +46,15 @@ class DanmakuList:
         for d in self.danmakus:
             dids.append(d.did)
         return dids
+
+    @staticmethod
+    def create_instance(chat_server: str = '', cid: int = UNDEFINED, mission: int = UNDEFINED,
+                        max_limit: int = UNDEFINED,
+                        real_name: str = '', source: str = '',
+                        danmakus: list = None):
+        if danmakus is None:
+            danmakus = []
+        return DanmakuList(chat_server, cid, mission, max_limit, real_name, source, danmakus)
 
 
 if __name__ == '__main__':
