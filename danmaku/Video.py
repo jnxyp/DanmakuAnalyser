@@ -18,11 +18,12 @@ class Video:
     no_reprint = 0
     copyright = 0
     author_id = 0
-    chapters = []
+    title = ''
+    cids = []
 
     def __init__(self, aid: int, view: int, danmaku: int, reply: int, favourite: int, coin: int,
                  share: int, now_rank: int, his_rank: int, like: int, no_reprint: int, copyright: int, author_id: int,
-                 chapters: list):
+                 title: str, cids: list):
         self.aid = aid
         self.view = view
         self.danmaku = danmaku
@@ -36,15 +37,20 @@ class Video:
         self.no_reprint = no_reprint
         self.copyright = copyright
         self.author_id = author_id
-        self.chapters = chapters
+        self.title = title
+        self.cids = cids
 
     @staticmethod
     def create_instance(aid: int = UNDEFINED, view: int = UNDEFINED, danmaku: int = UNDEFINED,
                         reply: int = UNDEFINED, favourite: int = UNDEFINED, coin: int = UNDEFINED,
                         share: int = UNDEFINED, now_rank: int = UNDEFINED, his_rank: int = UNDEFINED,
                         like: int = UNDEFINED, no_reprint: int = UNDEFINED, copyright: int = UNDEFINED,
-                        author_id: int = UNDEFINED, chapters: list = None):
-        if chapters is None:
-            chapters = []
+                        author_id: int = UNDEFINED, title: str = '', cids: list = None, auto_fill: bool = False):
+        if auto_fill:
+            if cids is None:  # if cids is not given, get cids by video's aid.
+                from danmaku.Util import get_cids
+                cids = get_cids(aid)
+        if cids is None:
+            cids = []
         return Video(aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like, no_reprint, copyright,
-                     author_id, chapters)
+                     author_id, title, cids)

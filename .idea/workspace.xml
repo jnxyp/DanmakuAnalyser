@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d935dff8-5d30-40ba-bc9d-f305b3e97b01" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/text_analysis/Edit_Distance.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/text_analysis/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jn_xy.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jn_xy.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/danmaku/Danmaku.py" afterPath="$PROJECT_DIR$/danmaku/Danmaku.py" />
+      <change beforePath="$PROJECT_DIR$/danmaku/DanmakuList.py" afterPath="$PROJECT_DIR$/danmaku/DanmakuList.py" />
+      <change beforePath="$PROJECT_DIR$/danmaku/Util.py" afterPath="$PROJECT_DIR$/danmaku/Util.py" />
+      <change beforePath="$PROJECT_DIR$/danmaku/Video.py" afterPath="$PROJECT_DIR$/danmaku/Video.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,41 +21,20 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Danmaku.coverage" NAME="Danmaku Coverage Results" MODIFIED="1515204810692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util.coverage" NAME="Util Coverage Results" MODIFIED="1515279838452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Video.coverage" NAME="Video Coverage Results" MODIFIED="1515279772897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$DanmakuList.coverage" NAME="DanmakuList Coverage Results" MODIFIED="1515221054555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Video.coverage" NAME="Video Coverage Results" MODIFIED="1515291781610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$DanmakuList.coverage" NAME="DanmakuList Coverage Results" MODIFIED="1515294776663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$xml_parse.coverage" NAME="xml_parse Coverage Results" MODIFIED="1515208107349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Danmaku__1_.coverage" NAME="Danmaku (1) Coverage Results" MODIFIED="1515219657104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Edit_Distance.coverage" NAME="Edit_Distance Coverage Results" MODIFIED="1515296977696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_analysis" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DanmakuList.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/danmaku/DanmakuList.py">
+      <file leaf-file-name="Edit_Distance.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/text_analysis/Edit_Distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="364">
+              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Video.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/danmaku/Video.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/danmaku/Util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2881">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding>
-                <element signature="e#309#341#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -81,10 +67,11 @@
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/xml_parse.py" />
         <option value="$PROJECT_DIR$/danmaku/DanmakuDownloader.py" />
-        <option value="$PROJECT_DIR$/danmaku/Danmaku.py" />
-        <option value="$PROJECT_DIR$/danmaku/DanmakuList.py" />
         <option value="$PROJECT_DIR$/danmaku/Util.py" />
         <option value="$PROJECT_DIR$/danmaku/Video.py" />
+        <option value="$PROJECT_DIR$/danmaku/Danmaku.py" />
+        <option value="$PROJECT_DIR$/danmaku/DanmakuList.py" />
+        <option value="$PROJECT_DIR$/text_analysis/Edit_Distance.py" />
       </list>
     </option>
   </component>
@@ -95,8 +82,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="586" />
-    <option name="y" value="-28" />
+    <option name="x" value="488" />
+    <option name="y" value="-20" />
     <option name="width" value="976" />
     <option name="height" value="1050" />
   </component>
@@ -130,6 +117,15 @@
               <item name="DanmakuAnalyser" type="462c0819:PsiDirectoryNode" />
               <item name="danmaku" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DanmakuAnalyser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DanmakuAnalyser" type="462c0819:PsiDirectoryNode" />
+              <item name="text_analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DanmakuAnalyser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -159,7 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Util">
+  <component name="RunManager" selected="Python.Edit_Distance">
     <configuration name="Danmaku (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -193,6 +189,25 @@
       <module name="DanmakuAnalyser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/danmaku/DanmakuList.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Edit_Distance" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/text_analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DanmakuAnalyser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/text_analysis/Edit_Distance.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,39 +251,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="xml_parse" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DanmakuAnalyser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xml_parse.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.xml_parse" />
-      <item index="1" class="java.lang.String" itemvalue="Python.DanmakuList" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Danmaku (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Util" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Video" />
+      <item index="0" class="java.lang.String" itemvalue="Python.DanmakuList" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Danmaku (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Util" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Video" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Edit_Distance" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Util" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Video" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DanmakuList" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Danmaku (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.xml_parse" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Edit_Distance" />
+        <item index="1" class="java.lang.String" itemvalue="Python.DanmakuList" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Video" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Util" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Danmaku (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515281177969</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creating video class and video info API">
+      <created>1515281194359</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1515281194359</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -318,11 +321,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36641222" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36641222" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27589968" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27453026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -333,7 +337,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -551,36 +554,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/danmaku/Danmaku.py">
+    <entry file="file://$PROJECT_DIR$/danmaku/Video.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="321">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/danmaku/DanmakuList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="962">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/danmaku/Danmaku.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="57" column="35" lean-forward="false" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/danmaku/Util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2881">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="156">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#309#341#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/danmaku/Video.py">
+    <entry file="file://$PROJECT_DIR$/text_analysis/Edit_Distance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="364">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding />
         </state>
       </provider>

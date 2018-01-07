@@ -48,11 +48,14 @@ class Danmaku:
     def __str__(self):
         return '[' + str(self.did) + '] "' + self.content + '"'
 
-    def __eq__(self, o):
-        if self.did == o.did:
-            return True
-        else:
-            return False
+    def __eq__(self, other):
+        return self.did == other.did
+
+    def __lt__(self, other):
+        return self.did < other.did
+
+    def __gt__(self, other):
+        return self.did > other.did
 
     def __hash__(self):
         return self.did

@@ -43,10 +43,10 @@ class DanmakuList:
             print('Cannot perform merging: two Danmaku Lists have different cid.')
 
     def get_danmaku_ids(self):
-        dids = []
-        for d in self.danmakus:
-            dids.append(d.did)
-        return dids
+        return [d.did for d in self.danmakus]
+
+    def get_danmaku_contents(self):
+        return [d.content for d in self.danmakus]
 
     @staticmethod
     def create_instance(chat_server: str = '', cid: int = UNDEFINED, mission: int = UNDEFINED,
@@ -62,4 +62,4 @@ if __name__ == '__main__':
     with open('10086.xml', encoding='utf-8') as f:
         s = f.read()
     l = DanmakuList.parse(s)
-    print(*l.danmakus)
+    print(l.get_danmaku_contents())

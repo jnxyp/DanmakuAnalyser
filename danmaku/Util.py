@@ -106,15 +106,13 @@ def get_uid(sender_hash: str):
         return UNDEFINED
     return int(received)
 
+def get_video_by_aid(aid: int):
+    received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
+    return Video.create_instance(*received.values())
 
 def timestamp_to_datetime(stamp: int):
     import datetime
     return datetime.datetime.fromtimestamp(stamp).strftime('%Y-%m-%d %H:%M:%S')
-
-
-def get_video_by_aid(aid: int):
-    received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
-    return Video.create_instance(*received.values())
 
 
 if __name__ == '__main__':
