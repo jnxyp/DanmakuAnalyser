@@ -56,8 +56,7 @@ def get_cids(aid: int):
             aids.append(p.get('cid'))
         return aids
     except JSONDecodeError as e:
-        print('Failed to get the video chapter cid for aid #%d, login required. (Not supported yet)' % aid)
-        return []
+        raise ValueError('Failed to get the video chapter cid for aid #%d, login required. (Not supported yet)' % aid)
 
 
 def get_history_danmaku_pools(cid: int, skipping_threshold: int = 1000):
@@ -98,13 +97,14 @@ def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
     return d_list
 
 
-def get_uid(sender_hash: str):
+def get_uid(sender_hash: str) -> list:
     # Third-party API
-    # received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json()
-    received = requests.get('https://bili.b612.in/api/?type=usermid&hash=%s' % sender_hash).content.decode()
-    if received == '':
-        return UNDEFINED
-    return int(received)
+    try:
+        received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json().get('data')
+        uids = [id.get('id') for id in received]
+        return uids
+    except Exception:
+        return [requests.get('https://bili.b612.in/api/?type=usermid&hash=%s' % sender_hash).content.decode()]
 
 def get_video_by_aid(aid: int):
     received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
@@ -137,6 +137,6 @@ if __name__ == '__main__':
     # with open('dmk2.txt', 'w', encoding='utf-8') as f:
     #     f.write(s)
 
-    # print(get_uid('f9ff56e4'))
+    print(get_uid('f9ff56e4'))
 
-    print(get_video_by_aid(17957424).reply)
+    # print(get_video_by_aid(17957424).reply)
