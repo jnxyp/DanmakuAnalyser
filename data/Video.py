@@ -48,7 +48,7 @@ class Video:
                         author_id: int = UNDEFINED, title: str = '', cids: list = None, auto_fill: bool = False):
         if auto_fill:
             if cids is None:  # if cids is not given, get cids by video's aid.
-                from danmaku.Util import get_cids
+                from util.Util import get_cids
                 cids = get_cids(aid)
         if cids is None:
             cids = []

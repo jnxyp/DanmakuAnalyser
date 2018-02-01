@@ -1,7 +1,7 @@
 import re
 
-from danmaku.Util import *
-from text_analysis.Edit_Distance import calc_similarities
+from util.Util import *
+from util.Edit_Distance import calc_similarities
 
 def similarity_merging(strings:list, min_sim:int = 0.7):
     merged = []

@@ -18,6 +18,7 @@ class Danmaku:
                8: 'Advanced_2'}
     SIZES = {12: 'XXS', 16: 'XS', 18: 'S', 25: 'M', 36: 'L', 45: 'XL', 64: 'XXL'}
     POOLS = {0: 'NORMAL', 1: 'SUBTITLE', 2: 'SPECIAL'}
+
     appear_time = 0.0
     d_type = 1
     size = 25

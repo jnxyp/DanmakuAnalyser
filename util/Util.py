@@ -11,11 +11,12 @@
 # https://bili.b612.in/api/?type=usermid&hash=<sender_hash>
 
 from json import JSONDecodeError
-from danmaku.DanmakuList import DanmakuList
-from danmaku.Danmaku import Danmaku
+from data.DanmakuList import DanmakuList
 import requests
+import xml.dom.minidom
+from xml.dom.minidom import parseString
 
-from danmaku.Video import Video
+from data.Video import Video
 
 DEBUG = True
 UNDEFINED = -666
@@ -85,13 +86,13 @@ def get_history_danmaku_list(cid: int, timestamp: int):
 def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
     pools = get_history_danmaku_pools(cid)
     timestamps = [timestamp[0] for timestamp in pools]
-    _p('Got history danmaku pools list: ' + str(timestamps))
+    _p('Got history data pools list: ' + str(timestamps))
     d_list = get_history_danmaku_list(cid, timestamps[0])
-    _p('Got history danmaku pool ' + timestamp_to_datetime(timestamps[0]))
+    _p('Got history data pool ' + timestamp_to_datetime(timestamps[0]))
     i = 1
     while i < len(timestamps) and not (i > max_pools >= 1):
         d_list_new = get_history_danmaku_list(cid, timestamps[i])
-        _p('Got history danmaku pool ' + timestamp_to_datetime(timestamps[i]))
+        _p('Got history data pool ' + timestamp_to_datetime(timestamps[i]))
         d_list.merge(d_list_new)
         i += 1
     return d_list
@@ -111,37 +112,23 @@ def timestamp_to_datetime(stamp: int):
     import datetime
     return datetime.datetime.fromtimestamp(stamp).strftime('%Y-%m-%d %H:%M:%S')
 
-def parse_rule_xml(xml_string:str):
+def parse_rule_xml_str(xml_string:str):
+    # Parse XML
+    tree = parseString(xml_string)
+    items = tree.getElementsByTagName('filters')[0].getElementsByTagName('item')
+    rules_str = []
+    for item in items:
+        if item.childNodes[0].data.startswith('r='):
+            rules_str.append(item.childNodes[0].data[2:])
 
+    # Generate Rule objects
+    rules = []
 
+def parse_rule_xml(path:str, encoding = 'utf-8'):
+    with open(path,encoding=encoding) as f:
+        s = f.read()
+        rules = parse_rule_xml_str(s)
+    return rules
 
 if __name__ == '__main__':
-    pass
-
-    # l = parse_danmaku_list_from_bili(66478)
-    # for danmaku in l.danmakus:
-    #     print(danmaku)
-
-    # l = parse_danamku_list_from_file('10086.xml')
-    # for danmaku in l.danmakus:
-    #     print(danmaku)
-
-    # aids = parse_danmaku_list_from_bili(get_cids_by_aid(7)[0])
-    # print(*aids.danmakus)
-
-    # pool = get_history_danmaku_list_by_timestamp(2543804, list(get_history_danmaku_pools(2543804).keys())[0])
-    # print(*pool.danmakus)
-
-    # l = get_all_history_danmaku_lists(get_cids(1999286)[0])
-    # s = ''
-    # for d in l.danmakus:
-    #     s += str(d) + '\n'
-    # with open('dmk2.txt', 'w', encoding='utf-8') as f:
-    #     f.write(s)
-
-    # print(get_uid('f9ff56e4'))
-
-    # print(get_video_by_aid(17957424).reply)
-
-    # l = get_danmaku_list(get_cids(18695781)[0])
-    # print(get_uid(l.danmakus[0].sender_hash))
+    parse_rule_xml('../res/rules.xml')

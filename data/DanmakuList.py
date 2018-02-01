@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as Et
 
-from danmaku.Danmaku import Danmaku
+from data.Danmaku import Danmaku
 
 UNDEFINED = -666
 
