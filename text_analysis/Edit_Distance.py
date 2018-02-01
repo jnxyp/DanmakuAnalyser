@@ -25,5 +25,5 @@ def calc_similarities(s1:str, s2:str):
 
 
 if __name__ == '__main__':
-    print(calc_edit_distance('听说马上就要放假了','你听说要放假了'))
+    print(calc_similarities('trump','satan'))
     print(calc_similarities('abc', 'abe'))

@@ -99,12 +99,9 @@ def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
 
 def get_uid(sender_hash: str) -> list:
     # Third-party API
-    try:
-        received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json().get('data')
-        uids = [id.get('id') for id in received]
-        return uids
-    except Exception:
-        return [requests.get('https://bili.b612.in/api/?type=usermid&hash=%s' % sender_hash).content.decode()]
+    received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json().get('data')
+    uids = [id.get('id') for id in received]
+    return uids
 
 def get_video_by_aid(aid: int):
     received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
@@ -116,6 +113,8 @@ def timestamp_to_datetime(stamp: int):
 
 
 if __name__ == '__main__':
+    pass
+
     # l = parse_danmaku_list_from_bili(66478)
     # for danmaku in l.danmakus:
     #     print(danmaku)
@@ -137,6 +136,9 @@ if __name__ == '__main__':
     # with open('dmk2.txt', 'w', encoding='utf-8') as f:
     #     f.write(s)
 
-    print(get_uid('f9ff56e4'))
+    # print(get_uid('f9ff56e4'))
 
     # print(get_video_by_aid(17957424).reply)
+
+    # l = get_danmaku_list(get_cids(18695781)[0])
+    # print(get_uid(l.danmakus[0].sender_hash))
