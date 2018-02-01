@@ -111,6 +111,9 @@ def timestamp_to_datetime(stamp: int):
     import datetime
     return datetime.datetime.fromtimestamp(stamp).strftime('%Y-%m-%d %H:%M:%S')
 
+def parse_rule_xml(xml_string:str):
+
+
 
 if __name__ == '__main__':
     pass
