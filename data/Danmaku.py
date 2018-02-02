@@ -14,10 +14,11 @@ import uuid
 
 
 class Danmaku:
-    D_TYPES = {1: 'Rolling_1', 2: 'Rolling_2', 3: 'Rolling_3', 4: 'Bottom', 5: 'Top', 6: 'Reverse', 7: 'Advanced_1',
-               8: 'Advanced_2'}
-    SIZES = {12: 'XXS', 16: 'XS', 18: 'S', 25: 'M', 36: 'L', 45: 'XL', 64: 'XXL'}
-    POOLS = {0: 'NORMAL', 1: 'SUBTITLE', 2: 'SPECIAL'}
+    D_TYPES = {'Rolling_1': 1, 'Rolling_2': 2, 'Rolling_3': 3, 'Bottom': 4, 'Top': 5, 'Reverse': 6,
+               'Advanced_mode_7': 7,
+               'Advanced_mode_8': 8}
+    SIZES = {'XXS': 12, 'XS': 16, 'S': 18, 'M': 25, 'L': 36, 'XL': 45, 'XXL': 64}
+    POOLS = {'NORMAL': 0, 'SUBTITLE': 1, 'SPECIAL': 2}
 
     appear_time = 0.0
     d_type = 1
@@ -69,6 +70,7 @@ class Danmaku:
 
 
 if __name__ == '__main__':
-    l1 = [Danmaku.create_instance(did=1), Danmaku.create_instance(), Danmaku.create_instance(), Danmaku.create_instance()]
+    l1 = [Danmaku.create_instance(did=1), Danmaku.create_instance(), Danmaku.create_instance(),
+          Danmaku.create_instance()]
     l2 = [Danmaku.create_instance(did=1)]
     print(l2[0] in l1)

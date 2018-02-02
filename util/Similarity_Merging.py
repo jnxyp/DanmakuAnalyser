@@ -1,6 +1,6 @@
 import re
 
-from util.Util import *
+from util.Bili_API import *
 from util.Edit_Distance import calc_similarities
 
 def similarity_merging(strings:list, min_sim:int = 0.7):

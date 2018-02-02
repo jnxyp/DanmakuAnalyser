@@ -14,6 +14,7 @@ class Rule:
 
     @staticmethod
     def parse(rule_str: str, level: int = 0):
+        # Debug: print parsing tree
         print('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
         pattern = re.compile(rule_str)
 
@@ -27,7 +28,7 @@ class Rule:
             subrules.append(Rule.parse(subrule_str, level + 1))
 
         if len(subrules) == 1 and subrules_str[0] == rule_str and len(subrules[0].subrules) == 0:
-            print(' <- Invalid!', end='')
+            # print(' <- Invalid!', end='')
             return Rule(pattern, [])
         return Rule(pattern, subrules)
 

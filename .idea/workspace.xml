@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d935dff8-5d30-40ba-bc9d-f305b3e97b01" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/util/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/rule_tester/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/util/Bili_API.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/danmaku/Danmaku.py" afterPath="$PROJECT_DIR$/data/Danmaku.py" />
-      <change beforePath="$PROJECT_DIR$/danmaku/DanmakuList.py" afterPath="$PROJECT_DIR$/data/DanmakuList.py" />
-      <change beforePath="$PROJECT_DIR$/danmaku/Util.py" afterPath="$PROJECT_DIR$/util/Util.py" />
-      <change beforePath="$PROJECT_DIR$/danmaku/Video.py" afterPath="$PROJECT_DIR$/data/Video.py" />
-      <change beforePath="$PROJECT_DIR$/danmaku/__init__.py" afterPath="$PROJECT_DIR$/data/Rule.py" />
-      <change beforePath="$PROJECT_DIR$/text_analysis/Edit_Distance.py" afterPath="$PROJECT_DIR$/util/Edit_Distance.py" />
-      <change beforePath="$PROJECT_DIR$/text_analysis/Similarity_Merging.py" afterPath="$PROJECT_DIR$/util/Similarity_Merging.py" />
-      <change beforePath="$PROJECT_DIR$/text_analysis/Word_Frequency.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/text_analysis/__init__.py" afterPath="$PROJECT_DIR$/data/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/data/Danmaku.py" afterPath="$PROJECT_DIR$/data/Danmaku.py" />
+      <change beforePath="$PROJECT_DIR$/data/Rule.py" afterPath="$PROJECT_DIR$/data/Rule.py" />
+      <change beforePath="$PROJECT_DIR$/data/Video.py" afterPath="$PROJECT_DIR$/data/Video.py" />
+      <change beforePath="$PROJECT_DIR$/res/10086.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/util/Similarity_Merging.py" afterPath="$PROJECT_DIR$/util/Similarity_Merging.py" />
+      <change beforePath="$PROJECT_DIR$/util/Util.py" afterPath="$PROJECT_DIR$/util/Util.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,25 +20,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Danmaku.coverage" NAME="Danmaku Coverage Results" MODIFIED="1515204810692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util.coverage" NAME="Util Coverage Results" MODIFIED="1516997345238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Video.coverage" NAME="Video Coverage Results" MODIFIED="1515291781610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Rule.coverage" NAME="Rule Coverage Results" MODIFIED="1517496190181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$DanmakuList.coverage" NAME="DanmakuList Coverage Results" MODIFIED="1515294776663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util__1_.coverage" NAME="Util (1) Coverage Results" MODIFIED="1517450086768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
-    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Similarity_Merging.coverage" NAME="Similarity_Merging Coverage Results" MODIFIED="1517447914453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_analysis" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Danmaku.coverage" NAME="Danmaku Coverage Results" MODIFIED="1517514555862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Rule.coverage" NAME="Rule Coverage Results" MODIFIED="1517511870949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util__1_.coverage" NAME="Util (1) Coverage Results" MODIFIED="1517513360572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$xml_parse.coverage" NAME="xml_parse Coverage Results" MODIFIED="1515208107349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Danmaku__1_.coverage" NAME="Danmaku (1) Coverage Results" MODIFIED="1515219657104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Edit_Distance.coverage" NAME="Edit_Distance Coverage Results" MODIFIED="1516996998434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_analysis" />
     <SUITE FILE_PATH="coverage/DanmakuAnalyser$Word_Frequency.coverage" NAME="Word_Frequency Coverage Results" MODIFIED="1515423741460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_analysis" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util.coverage" NAME="Util Coverage Results" MODIFIED="1516997345238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Video.coverage" NAME="Video Coverage Results" MODIFIED="1515291781610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$DanmakuList.coverage" NAME="DanmakuList Coverage Results" MODIFIED="1515294776663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/danmaku" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Bili_API.coverage" NAME="Bili_API Coverage Results" MODIFIED="1517546973903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Similarity_Merging.coverage" NAME="Similarity_Merging Coverage Results" MODIFIED="1517447914453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_analysis" />
+    <SUITE FILE_PATH="coverage/DanmakuAnalyser$Util__2_.coverage" NAME="Util (2) Coverage Results" MODIFIED="1517514278941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/Util.py">
+      <file leaf-file-name="Bili_API.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2860">
-              <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+            <state relative-caret-position="350">
+              <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
               <folding>
                 <element signature="e#309#341#0" expanded="true" />
               </folding>
@@ -48,21 +48,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rule.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/Rule.py">
+      <file leaf-file-name="element.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/bs4/element.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+            <state relative-caret-position="281">
+              <caret line="1290" column="16" lean-forward="true" selection-start-line="1290" selection-start-column="16" selection-end-line="1290" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/rules.xml">
+      <file leaf-file-name="Video.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/Video.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="167" />
+            <state relative-caret-position="442">
+              <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -81,6 +81,7 @@
     <findStrings>
       <find>\# Danmaku Format\n\# example\:\n\# \&lt;d p\=\&quot;1830\.6300048828\,1\,25\,16777215\,1415241251\,0\,Da8b0a0d\,668464499\&quot;\&gt;再见了我的青春\&lt;\/d\&gt;\n\#              1        2  3     4        5      6    7         8            9\n\# 1\. 弹幕发送相对视频的时间\（以前是以秒为单位的整数\，现在用浮点记了\，更精准\）\n\# 2\. 弹幕类型\：1\~3\（但貌似只见过1\）滚动弹幕\、4底端弹幕\、5顶端弹幕\、6逆向弹幕\、7精准定位\、8高级弹幕\【默认是1\，基本以1\、4\、5多见\】\n\# 3\. 字号\：12非常小\,16特小\,18小\,25中\,36大\,45很大\,64特别大\【默认是25\】\n\# 4\. 字体颜色\：不是RGB而是十进制\n\# 5\. 弹幕发送时的UNIX时间戳\，基准时间1970\-1\-1 08\:00\:00\n\# 6\. 弹幕池类型\：0普通 1字幕 2特殊\n\# 7\. 发送者ID\【注意不是uid\，具体怎么关联的还不清楚\，屏蔽用\】\n\# 8\. 弹幕在数据库的ID\n\nclass Danmaku\:\n    D_TYPES \= \{\'Rolling1\'\: 1\, \'Rolling2\'\:2\,\'Rolling3\'\:3\, \'Bottom\'\: 4\, \'Top\'\:5\, \'Reverse\'\:6\, \'Advanced7\'\: 7\, \'Advanced8\'\:8\}\n    _appear_time \= 0\.0\n    _d_type \= 1\n    _size \= 25\n    _color \= 0\n    _timestamp \= 0\n    _pool \= 0\n    _sender_hash \= \'\'\n    _did \= 0\n    _content \= \'\'\n\n    def __init__\(self\, appear_time\:float\, d_type\:int\, size\:int\, color\:int\, timestamp\:int\, pool\:int\, sender_hash\:str\, did\:int\, content\:str\)\:\n        self\.appear_time \= appear_time\n        self\.type \= d_type\n        self\.size \= size\n        self\.color \= color\n        self\.timestamp \= timestamp\n        self\.pool \= pool\n\n    \@property\n    def appear_time\(self\)\:\n        return self\._appear_time\n\n    \@appear_time\.setter\n    def appear_time\(self\, appear_time\:float\)\:\n        if appear_time \&lt;\= 0\:\n            raise ValueError\(\'Illegal appear time\: \' \+ appear_time\)\n        else\:\n            self\._appear_time \= appear_time\n\n    \@property\n    def d_type\(self\)\:\n        return self\._d_type\n\n    \@d_type\.setter\n    def d_type\(self\)\:\n</find>
       <find>1414944000</find>
+      <find>&lt;title&gt;.*&lt;/title&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,9 +105,11 @@
         <option value="$PROJECT_DIR$/text_analysis/Similarity_Merging.py" />
         <option value="$PROJECT_DIR$/danmaku/Util.py" />
         <option value="$PROJECT_DIR$/data/Util.py" />
+        <option value="$PROJECT_DIR$/data/Rule.py" />
         <option value="$PROJECT_DIR$/util/Util.py" />
         <option value="$PROJECT_DIR$/data/Danmaku.py" />
-        <option value="$PROJECT_DIR$/data/Rule.py" />
+        <option value="$PROJECT_DIR$/data/Video.py" />
+        <option value="$PROJECT_DIR$/util/Bili_API.py" />
       </list>
     </option>
   </component>
@@ -117,8 +120,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="288" />
-    <option name="y" value="-20" />
+    <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1050" />
   </component>
@@ -140,7 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,7 +157,7 @@
             <path>
               <item name="DanmakuAnalyser" type="b2602c69:ProjectViewProjectNode" />
               <item name="DanmakuAnalyser" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="rule_tester" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DanmakuAnalyser" type="b2602c69:ProjectViewProjectNode" />
@@ -172,6 +173,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,21 +199,40 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Rule">
-    <configuration name="Edit_Distance" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Bili_API">
+    <configuration name="Bili_API" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/text_analysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/util" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DanmakuAnalyser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\My File\Projects\Python\DanmakuAnalyser\util\Edit_Distance.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/util/Bili_API.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Danmaku" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DanmakuAnalyser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/Danmaku.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,26 +257,26 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Similarity_Merging" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Util (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/text_analysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/util" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DanmakuAnalyser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\My File\Projects\Python\DanmakuAnalyser\util\Similarity_Merging.py" />
+      <option name="SCRIPT_NAME" value="D:\My File\Projects\Python\DanmakuAnalyser\util\Bili_API.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Util (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Util (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -274,39 +295,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Util" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/danmaku" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DanmakuAnalyser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/danmaku/Util.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Util" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Edit_Distance" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Similarity_Merging" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Util (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Rule" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Util (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Rule" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Util (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Danmaku" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Bili_API" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Rule" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Util (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Similarity_Merging" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Util" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Edit_Distance" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Bili_API" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Danmaku" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Util (2)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Util (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Rule" />
       </list>
     </recent_temporary>
   </component>
@@ -380,19 +382,27 @@
       <option name="project" value="LOCAL" />
       <updated>1517448552692</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Create the Rule class and the parser and splitter for the string regex expressions input.">
+      <created>1517496372871</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1517496372872</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25736097" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42093784" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29880044" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -445,7 +455,8 @@
     <MESSAGE value="Test my implementation...&#10;So far so good, but slow..." />
     <MESSAGE value="Completed Edit distance algorithm" />
     <MESSAGE value="Nice~" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nice~" />
+    <MESSAGE value="Create the Rule class and the parser and splitter for the string regex expressions input." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create the Rule class and the parser and splitter for the string regex expressions input." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,20 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/1783698127/_sre.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Danmaku.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/Rule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -476,7 +473,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -493,7 +490,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -503,7 +500,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -513,7 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -530,7 +527,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2366">
           <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
@@ -547,7 +544,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2496">
           <caret line="101" column="8" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
@@ -579,7 +576,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2392">
           <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
@@ -617,7 +614,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2366">
           <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
@@ -655,7 +652,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/Util.py">
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2496">
           <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
@@ -697,28 +694,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/10086.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3968" lean-forward="false" selection-start-line="0" selection-start-column="3964" selection-end-line="0" selection-end-column="3973" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/Edit_Distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/text_analysis/Word_Frequency.py" />
-    <entry file="file://$PROJECT_DIR$/util/Similarity_Merging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xml_parse.py" />
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/1783698127/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -734,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Video.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/DanmakuList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-520">
@@ -752,13 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="575" column="16" lean-forward="false" selection-start-line="575" selection-start-column="16" selection-end-line="575" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Danmaku.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -777,29 +739,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/rules.xml">
+    <entry file="file://$PROJECT_DIR$/res/rules.xml" />
+    <entry file="file://$PROJECT_DIR$/res/10086.xml" />
+    <entry file="file://$PROJECT_DIR$/data/Rule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="167" />
+        <state relative-caret-position="364">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/Similarity_Merging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/Edit_Distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Danmaku.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-599">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/Util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2860">
-          <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        <state relative-caret-position="364">
+          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding>
-            <element signature="e#309#341#0" expanded="true" />
+            <element signature="e#1#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Rule.py">
+    <entry file="file://$PROJECT_DIR$/data/Video.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="442">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/bs4/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="1290" column="16" lean-forward="true" selection-start-line="1290" selection-start-column="16" selection-end-line="1290" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/Bili_API.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="e#309#341#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
