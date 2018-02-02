@@ -1,5 +1,12 @@
 import re
 
+DEBUG = True
+
+
+def _p(s: str, end='\n'):
+    if DEBUG:
+        print(s, end=end)
+
 
 class Rule:
     subrules = []
@@ -15,7 +22,7 @@ class Rule:
     @staticmethod
     def parse(rule_str: str, level: int = 0):
         # Debug: print parsing tree
-        print('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
+        _p('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
         pattern = re.compile(rule_str)
 
         if level % 2 == 0:
@@ -28,7 +35,7 @@ class Rule:
             subrules.append(Rule.parse(subrule_str, level + 1))
 
         if len(subrules) == 1 and subrules_str[0] == rule_str and len(subrules[0].subrules) == 0:
-            # print(' <- Invalid!', end='')
+            _p(' <- Invalid!', end='')
             return Rule(pattern, [])
         return Rule(pattern, subrules)
 

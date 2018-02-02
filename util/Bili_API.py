@@ -11,6 +11,9 @@
 # https://bili.b612.in/api/?type=usermid&hash=<sender_hash>
 
 from json import JSONDecodeError
+
+import re
+
 from data.DanmakuList import DanmakuList
 import requests
 from data.Video import Video
@@ -30,9 +33,9 @@ UNDEFINED = -666
 #            'Accept-Encoding': 'gzip, deflate',
 #            'Accept-Language': 'zh-CN,zh;'}
 
-def _p(s):
+def _p(s, end='\n'):
     if DEBUG:
-        print(s)
+        print(s, end=end)
 
 
 def get_danmaku_list(cid: int):
@@ -103,21 +106,21 @@ def get_uid(sender_hash: str) -> list:
     return uids
 
 
-def get_video_stat_by_aid(aid: int):
+def get_video_stat_by_aid(aid: int) -> dict:
     '''
     Bilibili video statistic API
     :param aid: the av number of the video
-    :return: aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like, no_reprint, copyright
+    :return: dict{aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like, no_reprint, copyright}
     '''
     received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
     return received
 
 
-def get_video_info_by_aid(aid: int):
+def get_video_info_by_aid(aid: int) -> dict:
     '''
     Bilibili video playing site analysing
     :param aid: the av number of the video
-    :return: title, description, author_name
+    :return: dict{title, description, author_name, author_id}
     '''
     received = requests.get('https://www.bilibili.com/video/av%d/' % aid).content.decode()
 
@@ -126,12 +129,24 @@ def get_video_info_by_aid(aid: int):
     soup = BeautifulSoup(received, 'html.parser')
     any = True
 
-    title = soup.find(name='h1', attrs={'title': any}).string
-    description = soup.find(name='div', attrs={'id': 'v_desc'}).string
-    author_name = soup.find(name='a', attrs={'class': 'name'}).string
+    # Title
+    title = soup.find(name='h1', attrs={'title': any})['title']
 
-    return {'title':title, 'description':description, 'author_name':author_name}
+    # Description
+    # description = soup.find(name='div', attrs={'id': 'v_desc'}).string
+    description = soup.find(name='meta', attrs={'name': 'description'})['content']
 
+    # Author Name
+    # author_name = soup.find(name='a', attrs={'class': 'name'}).string
+    author_name = soup.find(name='meta', attrs={'name': 'author'})['content']
+
+    # Author ID
+    try:
+        author_id = int(soup.find(name='a', attrs={'class': 'name'})['mid'])
+    except KeyError as e:
+        author_id = int(soup.find(name='a', attrs={'href': re.compile('space\.bilibili\.com')})['href'].split('/')[-1])
+
+    return {'title': title, 'description': description, 'author_name': author_name, 'author_id': author_id}
 
 
 TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, 'Gaming': 4, 'Tech': 36, 'Life': 160,
@@ -139,8 +154,15 @@ TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, '
 TIME_RANGE = {'Today': 1, 'Three_days': 3, 'Week': 7, 'Month': 30}
 
 
-def get_ranking_video_aids(tid: int = TID.get('All'), time_range: int = TIME_RANGE.get('Three_days'),
+def get_ranking_video_info(tid: int = TID.get('All'), time_range: int = TIME_RANGE.get('Three_days'),
                            recent: bool = False):
+    '''
+    Get the information of videos from Bilbili rank
+    :param tid: Thread ID, refer to TID
+    :param time_range: valid time range for rankings, refer to TIME_RANGE
+    :param recent: Set to True if only want to include the video uploaded within specific time range
+    :return: list[dict{aid, author_name, coin, duration, author_id, pic, view, title, reply}]
+    '''
     if recent:
         recent = '0'
     else:
@@ -148,11 +170,20 @@ def get_ranking_video_aids(tid: int = TID.get('All'), time_range: int = TIME_RAN
     received = \
         requests.get('https://www.bilibili.com/index/rank/all-%s%d-%d.json' % (recent, time_range, tid)).json()['rank'][
             'list']
-    aids = []
+
+    def mmss2s(s: str):
+        s = s.split(':')
+        return int(s[0]) * 60 + int(s[1])
+
+    videos = []
     for video in received:
-        aids.append(int(video.get('aid')))
-    return aids
+        videos.append(
+            {'aid': int(video.get('aid')), 'author_name': video.get('author'), 'coin': video.get('coins'),
+             'duration': mmss2s(video.get('duration')), 'author_id': video.get('mid'), 'pic': video.get('pic'),
+             'view': video.get('play'), 'title': video.get('title'), 'reply': video.get('video_review')})
+    return videos
 
 
 if __name__ == '__main__':
-    video = get_video_info_by_aid(18900448)
+    for i in get_ranking_video_info():
+        print(i)
