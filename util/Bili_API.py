@@ -14,12 +14,18 @@ from json import JSONDecodeError
 
 import re
 
-from data.DanmakuList import DanmakuList
+from model.DanmakuList import DanmakuList
 import requests
-from data.Video import Video
 
 DEBUG = True
 UNDEFINED = -666
+
+# 分区ID
+TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, 'Gaming': 4,
+       'Tech': 36, 'Life': 160,
+       'OtoMAD': 119, 'Fashion': 155, 'Entertainment': 5, 'Movie&TV': 181}
+# 排行榜时间范围
+TIME_RANGE = {'Today': 1, 'Three_days': 3, 'Week': 7, 'Month': 30}
 
 
 # HEADERS = {'Host': 'comment.bilibili.com',
@@ -57,7 +63,8 @@ def get_cids(aid: int):
             aids.append(p.get('cid'))
         return aids
     except JSONDecodeError as e:
-        raise ValueError('Failed to get the video chapter cid for aid #%d, login required. (Not supported yet)' % aid)
+        raise ValueError(
+            'Failed to get the video chapter cid for aid #%d, login required. (Not supported yet)' % aid)
 
 
 def get_history_danmaku_pools(cid: int, skipping_threshold: int = 1000):
@@ -79,29 +86,35 @@ def get_history_danmaku_pools(cid: int, skipping_threshold: int = 1000):
 
 
 def get_history_danmaku_list(cid: int, timestamp: int):
-    received = requests.get('http://comment.bilibili.com/dmroll,%d,%d' % (timestamp, cid)).content.decode()
+    received = requests.get(
+        'http://comment.bilibili.com/dmroll,%d,%d' % (timestamp, cid)).content.decode()
     return DanmakuList.parse(received)
 
 
-def get_all_history_danmaku_lists(cid: int, max_pools: int = -1):
+def get_history_danmaku_lists(cid: int, max_pools: int = -1):
     from util.Util import timestamp_to_datetime
     pools = get_history_danmaku_pools(cid)
     timestamps = [timestamp[0] for timestamp in pools]
-    _p('Got history data pools list: ' + str(timestamps))
+    _p('Got history model pools list: ' + str(timestamps))
     d_list = get_history_danmaku_list(cid, timestamps[0])
-    _p('Got history data pool ' + timestamp_to_datetime(timestamps[0]))
-    i = 1
-    while i < len(timestamps) and not (i > max_pools >= 1):
-        d_list_new = get_history_danmaku_list(cid, timestamps[i])
-        _p('Got history data pool ' + timestamp_to_datetime(timestamps[i]))
+    _p('Got history model pool ' + timestamp_to_datetime(timestamps[0]))
+    j = 1
+    while j < len(timestamps) and not (j > max_pools >= 1):
+        d_list_new = get_history_danmaku_list(cid, timestamps[j])
+        _p('Got history model pool ' + timestamp_to_datetime(timestamps[j]))
         d_list.merge(d_list_new)
-        i += 1
+        j += 1
     return d_list
 
 
 def get_uid(sender_hash: str) -> list:
-    # Third-party API
-    received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json().get('data')
+    '''
+    Third-party user ID query API
+    :param sender_hash: the hash value in Danmaku list
+    :return: the sender's uid
+    '''
+    received = requests.get('http://biliquery.typcn.com/api/user/hash/%s' % sender_hash).json().get(
+        'model')
     uids = [id.get('id') for id in received]
     return uids
 
@@ -112,7 +125,8 @@ def get_video_stat_by_aid(aid: int) -> dict:
     :param aid: the av number of the video
     :return: dict{aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like, no_reprint, copyright}
     '''
-    received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get('data')
+    received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get(
+        'model')
     return received
 
 
@@ -143,18 +157,17 @@ def get_video_info_by_aid(aid: int) -> dict:
     # Author ID
     try:
         author_id = int(soup.find(name='a', attrs={'class': 'name'})['mid'])
-    except KeyError as e:
-        author_id = int(soup.find(name='a', attrs={'href': re.compile('space\.bilibili\.com')})['href'].split('/')[-1])
+    except KeyError:
+        author_id = int(
+            soup.find(name='a', attrs={'href': re.compile('space\.bilibili\.com')})['href'].split(
+                '/')[-1])
 
-    return {'title': title, 'description': description, 'author_name': author_name, 'author_id': author_id}
-
-
-TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, 'Gaming': 4, 'Tech': 36, 'Life': 160,
-       'OtoMAD': 119, 'Fashion': 155, 'Entertainment': 5, 'Movie&TV': 181}
-TIME_RANGE = {'Today': 1, 'Three_days': 3, 'Week': 7, 'Month': 30}
+    return {'title': title, 'description': description, 'author_name': author_name,
+            'author_id': author_id}
 
 
-def get_ranking_video_info(tid: int = TID.get('All'), time_range: int = TIME_RANGE.get('Three_days'),
+def get_ranking_video_info(tid: int = TID['All'],
+                           time_range: int = TIME_RANGE['Three_days'],
                            recent: bool = False):
     '''
     Get the information of videos from Bilbili rank
@@ -168,7 +181,8 @@ def get_ranking_video_info(tid: int = TID.get('All'), time_range: int = TIME_RAN
     else:
         recent = ''
     received = \
-        requests.get('https://www.bilibili.com/index/rank/all-%s%d-%d.json' % (recent, time_range, tid)).json()['rank'][
+        requests.get('https://www.bilibili.com/index/rank/all-%s%d-%d.json' % (
+            recent, time_range, tid)).json()['rank'][
             'list']
 
     def mmss2s(s: str):
@@ -178,11 +192,17 @@ def get_ranking_video_info(tid: int = TID.get('All'), time_range: int = TIME_RAN
     videos = []
     for video in received:
         videos.append(
-            {'aid': int(video.get('aid')), 'author_name': video.get('author'), 'coin': video.get('coins'),
-             'duration': mmss2s(video.get('duration')), 'author_id': video.get('mid'), 'pic': video.get('pic'),
-             'view': video.get('play'), 'title': video.get('title'), 'reply': video.get('video_review')})
+            {'aid': int(video.get('aid')), 'author_name': video.get('author'),
+             'coin': video.get('coins'),
+             'duration': mmss2s(video.get('duration')), 'author_id': video.get('mid'),
+             'pic': video.get('pic'),
+             'view': video.get('play'), 'title': video.get('title'),
+             'reply': video.get('video_review')})
     return videos
 
+
+# TODO Searching API
+# TODO User Information API
 
 if __name__ == '__main__':
     for i in get_ranking_video_info():

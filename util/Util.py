@@ -1,6 +1,6 @@
 
 from xml.dom.minidom import parseString
-from data.Rule import Rule
+from model.Rule import Rule
 
 def timestamp_to_datetime(stamp: int):
     import datetime

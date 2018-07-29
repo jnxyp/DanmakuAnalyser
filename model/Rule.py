@@ -23,6 +23,7 @@ class Rule:
     def parse(rule_str: str, level: int = 0):
         # Debug: print parsing tree
         _p('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
+
         pattern = re.compile(rule_str)
 
         if level % 2 == 0:
@@ -35,7 +36,7 @@ class Rule:
             subrules.append(Rule.parse(subrule_str, level + 1))
 
         if len(subrules) == 1 and subrules_str[0] == rule_str and len(subrules[0].subrules) == 0:
-            _p(' <- Invalid!', end='')
+            _p(' <- Cannot split!', end='')
             return Rule(pattern, [])
         return Rule(pattern, subrules)
 
@@ -44,7 +45,7 @@ class Rule:
         in_brackets = 0
         i = -1
         j = 0
-        l = []
+        subrules = []
         while j < len(s):
             # Count bracket
             if s[j] == '(' and s[i - 1] != '\\':
@@ -53,17 +54,17 @@ class Rule:
                 in_brackets -= 1
             # Split string by '|' out of all the brackets
             if s[j] == '|' and s[i - 1] != '\\' and not in_brackets:
-                l.append(s[i + 1:j])
+                subrules.append(s[i + 1:j])
                 i = j
             j += 1
-        l.append(s[i + 1:j])
-        return l
+        subrules.append(s[i + 1:j])
+        return subrules
 
     @staticmethod
     def _split_by_brackets(s: str):
         in_brackets = 0
         i = 0
-        l = []
+        subrules = []
         text = ''
         while i < len(s):
             # Count bracket
@@ -75,10 +76,10 @@ class Rule:
             if in_brackets:
                 text += s[i]
             elif len(text) > 0:
-                l.append(text[1:])
+                subrules.append(text[1:])
                 text = ''
             i += 1
-        return l
+        return subrules
 
 
 if __name__ == '__main__':
