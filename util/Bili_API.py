@@ -15,10 +15,9 @@ from json import JSONDecodeError
 import re
 
 from model.DanmakuList import DanmakuList
+from model.Constants import *
+from util.Util import *
 import requests
-
-DEBUG = True
-UNDEFINED = -666
 
 # 分区ID
 TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, 'Gaming': 4,
@@ -55,7 +54,7 @@ def get_danmaku_list_from_file(path: str, encoding: str = 'utf-8'):
     return DanmakuList.parse(s)
 
 
-def get_cids(aid: int):
+def get_cids_by_aid(aid: int):
     try:
         received = requests.get('http://www.bilibili.com/widget/getPageList?aid=%d' % aid).json()
         aids = []
@@ -123,10 +122,11 @@ def get_video_stat_by_aid(aid: int) -> dict:
     '''
     Bilibili video statistic API
     :param aid: the av number of the video
-    :return: dict{aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like, no_reprint, copyright}
+    :return: dict{aid, view, danmaku, reply, favourite, coin, share, now_rank, his_rank, like,
+    dislike, no_reprint, copyright}
     '''
     received = requests.get('http://api.bilibili.com/archive_stat/stat?aid=%d' % aid).json().get(
-        'model')
+        'data')
     return received
 
 
@@ -134,7 +134,7 @@ def get_video_info_by_aid(aid: int) -> dict:
     '''
     Bilibili video playing site analysing
     :param aid: the av number of the video
-    :return: dict{title, description, author_name, author_id}
+    :return: dict{title, description, author_name, author_id, pic}
     '''
     received = requests.get('https://www.bilibili.com/video/av%d/' % aid).content.decode()
 
@@ -162,8 +162,34 @@ def get_video_info_by_aid(aid: int) -> dict:
             soup.find(name='a', attrs={'href': re.compile('space\.bilibili\.com')})['href'].split(
                 '/')[-1])
 
+    # Video cover image url
+    pic = soup.find(name='meta', itemprop='image')['content']
+
     return {'title': title, 'description': description, 'author_name': author_name,
-            'author_id': author_id}
+            'author_id': author_id, 'pic': pic}
+
+
+def get_video_duration_by_aid_and_cid(aid: int, cid: int) -> int:
+    '''
+    Get duration of a video clip with specific aid and cid.
+    :param aid: the av number of the video
+    :param cid: the clip id of the video
+    :return: video clip duration in seconds
+    '''
+    received = requests.get(
+        'https://interface.bilibili.com/player?id=cid:%d&aid=%d' % (cid, aid)).content.decode()
+    pattern = re.compile('(?<=\<duration\>).*(?=\</duration\>)')
+    duration = pattern.findall(received)[0]
+    return str_duration_to_second(duration)
+
+
+def get_video_durations_by_aid(aid: int) -> list:
+    cids = get_cids_by_aid(aid)
+    durations = []
+    for cid in cids:
+        duration = get_video_duration_by_aid_and_cid(aid, cid)
+        durations.append(duration)
+    return durations
 
 
 def get_ranking_video_info(tid: int = TID['All'],
@@ -181,20 +207,16 @@ def get_ranking_video_info(tid: int = TID['All'],
     else:
         recent = ''
     received = \
-        requests.get('https://www.bilibili.com/index/rank/all-%s%d-%d.json' % (
-            recent, time_range, tid)).json()['rank'][
-            'list']
-
-    def mmss2s(s: str):
-        s = s.split(':')
-        return int(s[0]) * 60 + int(s[1])
+        requests.get('https://www.bilibili.com/index/rank/all-%s%d-%d.json' %
+                     (recent, time_range, tid)).json()['rank']['list']
 
     videos = []
     for video in received:
         videos.append(
             {'aid': int(video.get('aid')), 'author_name': video.get('author'),
              'coin': video.get('coins'),
-             'duration': mmss2s(video.get('duration')), 'author_id': video.get('mid'),
+             'duration': str_duration_to_second(video.get('duration')),
+             'author_id': video.get('mid'),
              'pic': video.get('pic'),
              'view': video.get('play'), 'title': video.get('title'),
              'reply': video.get('video_review')})
@@ -205,5 +227,4 @@ def get_ranking_video_info(tid: int = TID['All'],
 # TODO User Information API
 
 if __name__ == '__main__':
-    for i in get_ranking_video_info():
-        print(i)
+    print(get_video_stat_by_aid(28044866))

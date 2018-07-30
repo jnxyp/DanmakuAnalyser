@@ -1,6 +1,7 @@
 import re
 
-DEBUG = True
+from model.Danmaku import Danmaku
+from model.Constants import *
 
 
 def _p(s: str, end='\n'):
@@ -19,23 +20,28 @@ class Rule:
     def __str__(self):
         return self.pattern.pattern
 
+    def match(self, danmaku: Danmaku):
+        return self.pattern.findall(danmaku.content)
+
     @staticmethod
     def parse(rule_str: str, level: int = 0):
-        # Debug: print parsing tree
-        _p('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
 
         pattern = re.compile(rule_str)
 
         if level % 2 == 0:
-            subrules_str = Rule._split_by_line(rule_str)
+            subrule_strs = Rule._split_by_line(rule_str)
         else:
-            subrules_str = Rule._split_by_brackets(rule_str)
+            subrule_strs = Rule._split_by_brackets(rule_str)
 
         subrules = []
-        for subrule_str in subrules_str:
+
+        # Debug: print parsing tree
+        _p('\n' + str(level) + '\t' + '|   ' * level + '├───┬' + rule_str, end='')
+
+        for subrule_str in subrule_strs:
             subrules.append(Rule.parse(subrule_str, level + 1))
 
-        if len(subrules) == 1 and subrules_str[0] == rule_str and len(subrules[0].subrules) == 0:
+        if len(subrules) == 1 and subrule_strs[0] == rule_str and len(subrules[0].subrules) == 0:
             _p(' <- Cannot split!', end='')
             return Rule(pattern, [])
         return Rule(pattern, subrules)
@@ -83,5 +89,8 @@ class Rule:
 
 
 if __name__ == '__main__':
-    sample = "((1|0(00)*01)((11|10(00)*01))*|(0(00)*1|(1|0(00)*01)((11|10(00)*01))*(0|10(00)*1))((1(00)*1|(0|1(00)*01)((11|10(00)*01))*(0|10(00)*1)))*(0|1(00)*01)((11|10(00)*01))*)"
-    rule = Rule.parse(sample)
+    # sample = "((1|0(00)*01)((11|10(00)*01))*|(0(00)*1|(1|0(00)*01)((11|10(00)*01))*(0|10(00)*1))((1(00)*1|(0|1(00)*01)((11|10(00)*01))*(0|10(00)*1)))*(0|1(00)*01)((11|10(00)*01))*)"
+    # rule = Rule.parse(sample)
+    pattern = re.compile('ab')
+    string = 'abcdaaaaaascdaderafgb'
+    print(pattern.findall(string))

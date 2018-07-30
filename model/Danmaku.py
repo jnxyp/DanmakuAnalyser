@@ -11,15 +11,9 @@
 # 7. 发送者ID【注意不是uid，具体怎么关联的还不清楚，屏蔽用】
 # 8. 弹幕在数据库的ID
 import uuid
-
+from model.Constants import *
 
 class Danmaku:
-    D_TYPES = {'Rolling_1': 1, 'Rolling_2': 2, 'Rolling_3': 3, 'Bottom': 4, 'Top': 5, 'Reverse': 6,
-               'Advanced_mode_7': 7,
-               'Advanced_mode_8': 8}
-    SIZES = {'XXS': 12, 'XS': 16, 'S': 18, 'M': 25, 'L': 36, 'XL': 45, 'XXL': 64}
-    POOLS = {'NORMAL': 0, 'SUBTITLE': 1, 'SPECIAL': 2}
-
     appear_time = 0.0
     d_type = 1
     size = 25
@@ -30,7 +24,8 @@ class Danmaku:
     did = 0
     content = ''
 
-    def __init__(self, appear_time: float, d_type: int, size: int, color: int, timestamp: int, pool: int,
+    def __init__(self, appear_time: float, d_type: int, size: int, color: int, timestamp: int,
+                 pool: int,
                  sender_hash: str, did: int, content: str):
         self.appear_time = appear_time
         self.type = d_type
@@ -48,7 +43,7 @@ class Danmaku:
             self.content = ''
 
     def __str__(self):
-        return '[' + str(self.did) + '] "' + self.content + '"'
+        return self.content
 
     def __eq__(self, other):
         return self.did == other.did
@@ -63,9 +58,11 @@ class Danmaku:
         return self.did
 
     @staticmethod
-    def create_instance(appear_time: float = 0, d_type: int = 1, size: int = SIZES.get('M'), color: int = 0,
+    def create_instance(appear_time: float = 0, d_type: int = 1, size: int = DANMAKU_SIZES.get('M'),
+                        color: int = 0,
                         timestamp: int = 0, pool: int = 0,
-                        sender_hash: str = '', did: int = uuid.uuid1().__int__(), content: str = ''):
+                        sender_hash: str = '', did: int = uuid.uuid1().__int__(),
+                        content: str = ''):
         return Danmaku(appear_time, d_type, size, color, timestamp, pool, sender_hash, did, content)
 
 

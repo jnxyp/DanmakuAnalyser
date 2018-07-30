@@ -1,9 +1,7 @@
 import xml.etree.ElementTree as Et
 
 from model.Danmaku import Danmaku
-
-UNDEFINED = -666
-
+from model.Constants import *
 
 class DanmakuList:
     chat_server = ''

@@ -23,7 +23,7 @@ if __name__ == '__main__':
     CHINESE_CHARACTERS = re.compile('[\u4e00-\u9fa5]+')
     AID = 17977214
 
-    danmakus = get_danmaku_list(get_cids(AID)[0]).get_danmaku_contents()
+    danmakus = get_danmaku_list(get_cids_by_aid(AID)[0]).get_danmaku_contents()
 
     # replace all non Chinese characters
     chinese_danmakus = []
