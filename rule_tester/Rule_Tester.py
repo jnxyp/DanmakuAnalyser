@@ -5,7 +5,6 @@ from util.Util import parse_rule_xml_str
 from model.Constants import *
 from util.Mult_Thread import mult_thread_execute
 
-
 def _p(s, end='\n'):
     if DEBUG:
         print(s, end=end)
