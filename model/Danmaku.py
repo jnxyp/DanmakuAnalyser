@@ -11,7 +11,7 @@
 # 7. 发送者ID【注意不是uid，具体怎么关联的还不清楚，屏蔽用】
 # 8. 弹幕在数据库的ID
 import uuid
-from model.Constants import *
+from config.Constants import *
 
 class Danmaku:
     appear_time = 0.0
@@ -21,12 +21,12 @@ class Danmaku:
     timestamp = 0
     pool = 0
     sender_hash = ''
-    did = 0
+    d_id = 0
     content = ''
 
     def __init__(self, appear_time: float, d_type: int, size: int, color: int, timestamp: int,
                  pool: int,
-                 sender_hash: str, did: int, content: str):
+                 sender_hash: str, d_id: int, content: str):
         self.appear_time = appear_time
         self.type = d_type
         self.size = size
@@ -34,10 +34,10 @@ class Danmaku:
         self.timestamp = timestamp
         self.pool = pool
         self.sender_hash = sender_hash
-        if type(did) is str:
-            self.did = int(did)
+        if type(d_id) is str:
+            self.d_id = int(d_id)
         else:
-            self.did = did
+            self.d_id = d_id
         self.content = content
         if self.content is None:
             self.content = ''
@@ -46,16 +46,16 @@ class Danmaku:
         return self.content
 
     def __eq__(self, other):
-        return self.did == other.did
+        return self.d_id == other.d_id
 
     def __lt__(self, other):
-        return self.did < other.did
+        return self.d_id < other.d_id
 
     def __gt__(self, other):
-        return self.did > other.did
+        return self.d_id > other.d_id
 
     def __hash__(self):
-        return self.did
+        return self.d_id
 
     @staticmethod
     def create_instance(appear_time: float = 0, d_type: int = 1, size: int = DANMAKU_SIZES.get('M'),

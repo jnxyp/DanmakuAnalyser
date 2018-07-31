@@ -1,7 +1,7 @@
 import re
 
 from model.Danmaku import Danmaku
-from model.Constants import *
+from config.Constants import *
 
 
 def _p(s: str, end='\n'):
@@ -23,7 +23,7 @@ class Rule:
     def match(self, danmaku: Danmaku):
         return self.pattern.findall(danmaku.content)
 
-    @staticmethod
+    @staticmethod  # TODO Rewrite this parser
     def parse(rule_str: str, level: int = 0):
 
         pattern = re.compile(rule_str)

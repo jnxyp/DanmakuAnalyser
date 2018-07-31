@@ -1,4 +1,4 @@
-from model.Constants import *
+from config.Constants import *
 
 
 class Video:

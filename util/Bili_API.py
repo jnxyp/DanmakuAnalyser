@@ -15,16 +15,11 @@ from json import JSONDecodeError
 import re
 
 from model.DanmakuList import DanmakuList
-from model.Constants import *
+from config.Constants import *
 from util.Util import *
+from config.Constants import *
 import requests
 
-# 分区ID
-TID = {'All': 0, 'Animation': 1, 'Guochuang': 168, 'Music': 3, 'Dancing': 129, 'Gaming': 4,
-       'Tech': 36, 'Life': 160,
-       'OtoMAD': 119, 'Fashion': 155, 'Entertainment': 5, 'Movie&TV': 181}
-# 排行榜时间范围
-TIME_RANGE = {'Today': 1, 'Three_days': 3, 'Week': 7, 'Month': 30}
 
 
 # HEADERS = {'Host': 'comment.bilibili.com',
